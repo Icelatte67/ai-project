@@ -1,0 +1,1396 @@
+/* 🎨 Body background - Dark futuristic theme */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+
+html, body, [class*="css"] {
+  font-family: 'Cairo', sans-serif !important;
+  direction: rtl;
+}
+
+/* ===== خلفية الصفحة بالكامل ===== */
+.stApp {
+direction: rtl !important;
+text-align: right !important;
+font-family: 'Cairo', sans-serif !important;
+}
+
+:root { --primary-font: 'Cairo', 'Tajawal', sans-serif; }
+
+/* تطبيق على الحاويات الأساسية في ستريملت */
+html, body,
+[data-testid="stAppViewContainer"],
+.stApp,
+.reportview-container,
+.block-container,
+.main,
+[data-testid="stSidebar"],
+[data-testid="stHeader"],
+[data-testid="stMarkdownContainer"],
+.stMarkdown,
+.stTextInput, .stTextInput * ,
+.stNumberInput, .stNumberInput * ,
+.stSelectbox, .stSelectbox * ,
+.stButton, .stButton * ,
+.stMetric, .stMetric * ,
+input, textarea, select, button, label,
+h1, h2, h3, h4, h5, h6, p, span, div {
+    font-family: var(--primary-font) !important;
+}
+
+/* عناصر العناوين بقيمة وزن أكبر */
+h1, h2, h3 { font-weight: 700 !important; }
+
+/* بعض تحسينات مخصصة للموبايل إن رغبت */
+@media (max-width: 480px) {
+    html, body, .stApp { font-size: 15px; }
+}
+
+[data-testid="stHeader"] {
+    background: linear-gradient(145deg, #1b222c, #222b36);
+    color: white;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #ff7b00;
+    text-align: center;
+}
+
+
+/* لتغميق الخلفية قليلاً (اختياري) - Removed */
+
+/* ضمان أن محتوى الصفحة فوق الخلفية */
+.main,
+.block-container {
+  position: relative;
+  z-index: 1;
+}
+/* 📝 العنوان الرئيسي - مثل التصميم */
+/* .stApp h1, */
+.stApp .stTitle,
+h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  text-align: right !important;
+  color: #ffffff !important;
+  font-family: "Cairo", sans-serif !important;
+  margin: 2rem 0 !important;
+  padding: 1rem 0 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  /* background: linear-gradient(45deg, #ffffff, #e0e0e0) !important; */
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ==============================
+   Tabs Styling
+   ============================== */
+
+/* 🔹 Container للـ Tabs - مثل التصميم */
+.stTabs [role="tablist"] {
+  padding: 0.5rem !important;
+  margin: 2rem auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(17, 24, 31, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  max-width: 85% !important;
+}
+
+/* 🔹 Tabs الافتراضية - مثل التصميم */
+.stTabs [role="tablist"] button,
+[data-testid="stTabs"] button,
+button[data-baseweb="tab"] {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  padding: 1rem 1.5rem !important;
+  margin: 0.25rem !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* تأثير hover للـ tabs */
+.stTabs [role="tablist"] button:hover,
+[data-testid="stTabs"] button:hover,
+button[data-baseweb="tab"]:hover {
+  /* background: rgba(255, 255, 255, 0.1) !important; */
+  background: rgb(216 98 29 / 86%) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 🔹 نص التاب */
+.stTabs [role="tablist"] button p,
+.stTabs [role="tablist"] button span,
+.stTabs [role="tablist"] button div {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: inherit !important; /* يورث اللون من الزر نفسه */
+}
+
+/* 🔹 التاب النشط - مثل التصميم */
+.stTabs [role="tablist"] button[aria-selected="true"],
+[data-testid="stTabs"] button[aria-selected="true"],
+button[data-baseweb="tab"][aria-selected="true"] {
+  background: linear-gradient(135deg, #ff5f00 0%, #ff7f32 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(255, 95, 0, 0.4) !important;
+  transform: translateY(-1px) !important;
+  position: relative !important;
+}
+
+/* خط تحت التاب النشط */
+.stTabs [role="tablist"] button[aria-selected="true"]::after,
+[data-testid="stTabs"] button[aria-selected="true"]::after,
+button[data-baseweb="tab"][aria-selected="true"]::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80% !important;
+  height: 3px !important;
+  background: #ff5f00 !important;
+  border-radius: 2px !important;
+}
+
+/* 🔹 تأثير hover */
+.stTabs [role="tablist"] button:hover,
+[data-testid="stTabs"] button:hover,
+button[data-baseweb="tab"]:hover {
+  /* background: rgba(255, 255, 255, 0.1) !important; */
+  background: rgb(216 98 29 / 86%) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ==============================
+   File Upload Component - مثل التصميم بالضبط
+   ============================== */
+
+/* 🔹 File Upload Container - Enhanced */
+.stFileUploader,
+.stFileUploader > div,
+[data-testid="stFileUploader"] {
+  /* background: red !important; */
+  /* border: 2px dashed #2d8091 !important; */
+  color: #fff !important;
+  border: 3px dashed #3a87acd4 !important;
+  background: rgb(16 23 29 / 66%) !important;
+  border-radius: 20px !important;
+  padding: 4rem 3rem !important;
+  margin: 3rem auto !important;
+  text-align: center !important;
+  transition: all 0.4s ease !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(45, 128, 145, 0.1) !important;
+  position: relative !important;
+  max-width: 85% !important;
+  min-height: 220px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.stFileUploader::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 128, 145, 0.1) 0%,
+    transparent 50%
+  ) !important;
+  pointer-events: none !important;
+}
+
+.stFileUploader:hover {
+  border-color: #2d8091 !important;
+  /* background: #11181f !important; */
+  background:  #11181fde !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(45, 128, 145, 0.3) !important;
+}
+
+/* 🔹 Main Upload Text */
+.stFileUploader p:first-of-type,
+.stFileUploader div:first-of-type {
+  color: #ffffff !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  margin: 0.5rem 0 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 🔹 File Size Text */
+.stFileUploader p:last-of-type,
+.stFileUploader div:last-of-type {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.9rem !important;
+  margin: 0.5rem 0 1.5rem 0 !important;
+}
+
+/* 🔹 Upload Button - Enhanced with new color */
+.stFileUploader button,
+.stFileUploader [role="button"] {
+  background: linear-gradient(135deg, #2d8091 0%, #1e5a6b 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 1.2rem 2.5rem !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  transition: all 0.4s ease !important;
+  margin-top: 1.5rem !important;
+  box-shadow: 0 8px 25px rgba(45, 128, 145, 0.4) !important;
+  text-transform: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.stFileUploader button::before,
+.stFileUploader [role="button"]::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  ) !important;
+  transition: left 0.5s ease !important;
+}
+
+.stFileUploader button:hover,
+.stFileUploader [role="button"]:hover {
+  background: #2d8091 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 8px rgba(45, 128, 145, 0.6) !important;
+}
+
+.stFileUploader button:hover::before,
+.stFileUploader [role="button"]:hover::before {
+  left: 100% !important;
+}
+
+/* 🔹 Excel Icon */
+.stFileUploader::after::before {
+  content: "📊" !important;
+  font-size: 1.2rem !important;
+  margin-left: 0.5rem !important;
+}
+
+/* 🔹 Drag and Drop States - Enhanced */
+.stFileUploader[data-testid="stFileUploaderDropzone"] {
+  border-color: #2d8091 !important;
+  background: #11181f !important;
+  box-shadow: 0 5px 8px rgba(45, 128, 145, 0.3),
+    0 0 0 2px rgba(45, 128, 145, 0.5) !important;
+  transform: scale(1.02) !important;
+}
+
+.stFileUploader[data-testid="stFileUploaderDropzone"]::before {
+  content: "📁" !important;
+  opacity: 1 !important;
+  animation: pulse 1.5s infinite !important;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ==============================
+   Form Elements & Buttons - Enhanced for Figma Design
+   ============================== */
+
+/* 🔹 Form Container */
+.stForm {
+  /* background: #11181f !important; */
+  /* border: 1px solid rgba(45, 128, 145, 0.2) !important; */
+  /* background: #11181f !important; */
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  margin: 2rem 0 !important;
+  backdrop-filter: blur(50px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 🔹 Form Title */
+.stForm h3,
+.stForm .stSubheader {
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 🔹 Input Fields - Enhanced */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div > div {
+  background: rgba(255, 255, 255, 0.05) !important;
+  /* border: 2px solid rgba(45, 128, 145, 0.3) !important; */
+  border-radius: 12px !important;
+  height: fit-content;
+  max-height:50px;
+  color: #ffffff !important;
+  padding: .5rem .5rem !important;
+  /* backdrop-filter: blur(10px) !important; */
+  transition: all 0.4s ease !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus,
+.stSelectbox > div > div > div:focus {
+  border-color: #ff5f00 !important;
+  box-shadow: 0 0 0 3px rgba(255, 95, 0, 0.3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 🔹 Input Labels */
+.stTextInput > label,
+.stNumberInput > label,
+.stSelectbox > label {
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 🔹 Placeholder Text */
+.stTextInput > div > div > input::placeholder,
+.stNumberInput > div > div > input::placeholder,
+.stSelectbox input::placeholder,
+.stSelectbox [role="combobox"] input::placeholder {
+  color: #fff !important;
+  opacity: 0.9 !important;
+  font-style: italic !important;
+}
+
+/* 🔹 Selectbox Dropdown */
+.stSelectbox > div > div > div[role="combobox"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  /* border: 2px solid rgba(45, 128, 145, 0.3) !important; */
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  padding: 1rem 1.2rem !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.4s ease !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stSelectbox > div > div > div[role="combobox"]:hover {
+  border-color: #ff5f00 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 🔹 Form Columns */
+.stColumns {
+  gap: 2rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+.stColumn {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  /* border: 1px solid rgba(45, 128, 145, 0.1) !important; */
+}
+
+/* ====== GAME STYLE 3D BUTTON ====== */
+[data-testid="stBaseButton-secondaryFormSubmit"] {
+  position: relative;
+  background: linear-gradient(145deg, #ff8c00, #ff5400);
+  color: #fff !important;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+      0 6px 0 #c03c00,      /* ظل سفلي سميك */
+      0 6px 15px rgba(0, 0, 0, 0.4); /* ظل خارجي ناعم */
+  transition: all 0.15s ease-in-out;
+  transform: translateY(0);
+}
+
+/* ====== تأثير الضغط (3D Down Effect) ====== */
+[data-testid="stBaseButton-secondaryFormSubmit"]:active {
+  box-shadow:
+      0 2px 0 #c03c00,
+      0 2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(4px);
+  background: linear-gradient(145deg, #ff7300, #e24300);
+}
+
+/* ====== تأثير الإضاءة عند المرور ====== */
+[data-testid="stBaseButton-secondaryFormSubmit"]:hover {
+  background: linear-gradient(145deg, #ffa733, #ff6f00);
+  box-shadow:
+      0 8px 0 #c03c00,
+      0 8px 20px rgba(255, 94, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ====== لمسة متوهجة في الأطراف (Glow) ====== */
+[data-testid="stBaseButton-secondaryFormSubmit"]::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, rgba(255,120,0,0.6), rgba(255,0,0,0.4));
+  z-index: -1;
+  filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-testid="stBaseButton-secondaryFormSubmit"]:hover::after {
+  opacity: 1;
+}
+
+/* ====== موبايل - responsive ====== */
+@media (max-width: 768px) {
+  [data-testid="stBaseButton-secondaryFormSubmit"] {
+      font-size: 1rem;
+      padding: 0.6rem 1.8rem;
+  }
+}
+
+
+/* 🔹 Buttons - Enhanced with new color */
+.stButton > button {
+  background: linear-gradient(135deg, #ff5f00 0%, #ff7f32 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 1.2rem 3rem !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  transition: all 0.4s ease !important;
+  box-shadow: 0 8px 25px rgba(255, 95, 0, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-transform: none !important;
+  min-width: 200px !important;
+  margin: 2rem auto !important;
+  display: block !important;
+}
+
+.stButton > button::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  ) !important;
+  transition: left 0.5s ease !important;
+}
+
+.stButton > button:hover {
+  background: linear-gradient(135deg, #ff7f32 0%, #ff5f00 100%) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 35px rgba(255, 95, 0, 0.6) !important;
+}
+
+.stButton > button:hover::before {
+  left: 100% !important;
+}
+
+/* 🔹 Form Submit Button Specific */
+.stForm .stButton > button {
+  width: 100% !important;
+  max-width: 300px !important;
+  margin: 2rem auto 0 auto !important;
+}
+
+/* 🔹 Metrics/KPI Cards - Enhanced with new color */
+.stMetric {
+  background: #11181f !important;
+  border: 1px solid rgba(45, 128, 145, 0.2) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  margin: 1.5rem 0 !important;
+  backdrop-filter: blur(15px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(45, 128, 145, 0.1) !important;
+  transition: all 0.4s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.stMetric::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 128, 145, 0.05) 0%,
+    transparent 50%
+  ) !important;
+  pointer-events: none !important;
+}
+
+.stMetric:hover {
+  background: #11181f !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(45, 128, 145, 0.3) !important;
+  border-color: rgba(45, 128, 145, 0.4) !important;
+}
+
+.stFileUploader,
+.stFileUploader > div,
+[data-testid="stFileUploader"] {
+  background: #11181f !important;
+}
+.st-emotion-cache-15nprkh {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 500px;
+  min-height: 200px;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  height: 4.25rem;
+  cursor: pointer;
+}
+
+.stFileUploader p:first-of-type,
+.stFileUploader div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* تكبير الحقول */
+.stTextInput > div > div > input,
+.stNumberInput input,
+.stSelectbox div[data-baseweb="select"] > div {
+  min-height: 80px !important;
+  font-size: 15px !important;
+  padding: 25px 15px !important;
+  border-radius: 12px !important;
+}
+
+/* تكبير نص العناصر */
+.stSelectbox div[data-baseweb="select"] span {
+  font-size: 18px !important;
+}
+
+.stSelectbox div[data-baseweb="input"] > div {
+  min-height: 85px !important;
+  font-size: 18px !important;
+  padding: 30px 15px !important;
+  border-radius: 12px !important;
+}
+
+/* تكبير نص العناصر */
+.stSelectbox div[data-baseweb="input"] span {
+  font-size: 18px !important;
+}
+
+.stTabs [role="tablist"] button,
+[data-testid="stTabs"] button,
+button[data-baseweb="tab"] {
+  color: red;
+}
+
+/* ====== العنوان الرئيسي ====== */
+.main-title {
+  text-align: center;
+  color: #11181f !important;
+  font-size: 30px;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+  margin-top: -30px;
+  direction: rtl !important;
+  text-shadow: -1px 3px 4px #ff711c;
+}
+
+
+/* ====== حاوية النموذج ====== */
+.form-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* ====== الأزرار ====== */
+button[kind="primary"] {
+  background-color: #0f6d5f !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-weight: bold !important;
+}
+
+/* ====== مربعات الإدخال ====== */
+.stNumberInput,
+.stSelectbox {
+  border: 1px solid #1e5a6b;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid #ff5f00;
+  background: rgba(17, 24, 31, 0.85);
+}
+
+.stTextInput > div > div > input,
+.stNumberInput input,
+.stSelectbox div[data-baseweb="select"] > div {
+  background: rgba(17, 24, 31, 0.7);
+}
+
+/* ==============================
+   RTL (Right-to-Left) Direction Support
+   ============================== */
+
+/* 🔹 Main App RTL Direction - Merged with main .stApp */
+
+/* 🔹 Body RTL Support - Removed */
+
+/* 🔹 Form RTL Direction */
+.stForm,
+.stForm > div,
+[data-testid="stForm"] {
+  direction: rtl !important;
+  text-align: right !important;
+  /* max-width: 800px;
+  margin: auto 10px; */
+}
+
+/* 🔹 Input Fields RTL */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div > div,
+.stSelectbox > div > div > div[role="combobox"] {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 20px !important;
+  padding-left: 50px !important;
+}
+
+/* 🔹 Dropdown Arrow RTL Positioning - Removed Duplicates */
+
+/* 🔹 Dropdown Options RTL */
+.stSelectbox [role="option"],
+.stSelectbox [data-baseweb="menu"] li {
+  direction: rtl !important;
+  text-align: right !important;
+  padding: 20px 25px 20px 50px !important;
+}
+
+/* 🔹 Labels RTL */
+.stTextInput > label,
+.stNumberInput > label,
+.stSelectbox > label {
+  direction: rtl !important;
+  text-align: right !important;
+  margin-right: 0 !important;
+  margin-left: 0.8rem !important;
+}
+
+/* 🔹 Button RTL */
+.stButton > button {
+  direction: rtl !important;
+  text-align: center !important;
+}
+
+/* 🔹 Columns RTL Layout */
+.stColumns {
+  direction: rtl !important;
+}
+
+.stColumn {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Main Title RTL - Merged with main style */
+
+/* 🔹 Form Container RTL */
+.form-container {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Tab2 Specific RTL */
+.stForm .stTextInput > div > div > input,
+.stForm .stNumberInput > div > div > input,
+.stForm .stSelectbox > div > div > div {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 20px !important;
+  padding-left: 50px !important;
+  color: #fff !important;
+}
+
+/* 🔹 Number Input RTL */
+.stNumberInput input {
+  direction: rtl !important;
+  text-align: right !important;
+  color: #fff !important;
+  background:rgb(29 36 43) !important;
+
+}
+
+/* 🔹 Placeholder RTL */
+.stTextInput > div > div > input::placeholder,
+.stNumberInput > div > div > input::placeholder {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Metrics RTL */
+.stMetric {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* [data-baseweb="select"]:focus,
+[data-baseweb="select"] *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+} */
+
+
+/* 🔹 Tabs RTL */
+.stTabs [role="tablist"] {
+  direction: rtl !important;
+}
+
+.stTabs [role="tablist"] button {
+  direction: rtl !important;
+  text-align: center !important;
+}
+
+/* 🔹 File Uploader RTL */
+.stFileUploader {
+  direction: rtl !important;
+  text-align: center !important;
+  background-color: #ff5f00;
+}
+
+/* 🔹 Alert Messages RTL */
+.stAlert {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Dataframe RTL */
+.stDataFrame {
+  direction: rtl !important;
+}
+
+/* 🔹 Sidebar RTL */
+.stSidebar {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Container RTL */
+.stContainer {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Markdown RTL */
+.stMarkdown {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Code RTL */
+.stCode {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Success/Error Messages RTL */
+.stSuccess,
+.stError,
+.stWarning,
+.stInfo {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Progress Bar RTL */
+.stProgress {
+  direction: rtl !important;
+}
+
+/* 🔹 Slider RTL */
+.stSlider {
+  direction: rtl !important;
+}
+
+/* 🔹 Checkbox RTL */
+.stCheckbox {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Radio RTL */
+.stRadio {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Text Area RTL */
+.stTextArea textarea {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Date Input RTL */
+.stDateInput input {
+  color: #fff !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Time Input RTL */
+.stTimeInput input {
+  color: #fff !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Multiselect RTL */
+.stMultiSelect {
+  direction: rtl !important;
+}
+
+/* 🔹 Color Picker RTL */
+.stColorPicker {
+  direction: rtl !important;
+}
+
+/* 🔹 Camera Input RTL */
+.stCameraInput {
+  color: #fff !important;
+  direction: rtl !important;
+  text-align: center !important;
+}
+
+/* 🔹 Download Button RTL */
+.stDownloadButton {
+  direction: rtl !important;
+  text-align: center !important;
+}
+
+/* 🔹 Link RTL */
+.stLink {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Balloons RTL */
+.stBalloons {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Expander RTL */
+.stExpander {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Accordion RTL */
+.stAccordion {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Tabs Content RTL */
+.stTabs [role="tabpanel"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 🔹 Columns RTL Layout Enhancement - Removed Duplicates */
+
+.stFileUploader {
+  background-color: #ff5f00;
+}
+
+.stFileUploader,
+.stFileUploader > div,
+[data-testid="stFileUploader"] {
+/* border: 1px solid #46e3ff !important; */
+  color: #fff !important;
+  border-radius: 12px !important;
+  border: 3px dashed #3a87acd4 !important;
+  background: rgb(16 23 29 / 66%) !important;
+}
+
+.stFileUploader p:first-of-type,
+.stFileUploader div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  font-size: 25px !important;
+}
+
+.main-title {
+  color: #fff !important;
+  font-size: 30px !important;
+  font-weight: bold !important;
+}
+
+/*  🎯 تخصيص المكوّن الرسمي لرفع الملفات */
+[data-testid="stFileUploaderDropzone"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 2px dashed rgba(255, 123, 0, 0.6);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+[data-testid="stFileUploaderDropzone"]:hover {
+  border-color: #ff7b00;
+  background-color: rgba(255, 123, 0, 0.08);
+  transform: scale(1.02);
+}
+
+/*  🎨 النص داخل المكوّن */
+[data-testid="stFileUploaderDropzone"] h3,
+[data-testid="stFileUploaderDropzone"] span {
+  font-family: 'Cairo', sans-serif;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/*  🧡 زر رفع الملفات */
+[data-testid="stBaseButton-secondary"] {
+  background: linear-gradient(90deg, #ff7b00, #ff4d00);
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+[data-testid="stBaseButton-secondary"]:hover {
+  box-shadow: 0 0 10px rgba(255,123,0,0.5);
+  transform: translateY(-2px);
+}
+
+/*  📱 تصميم متجاوب */
+@media (max-width: 768px) {
+  [data-testid="stFileUploaderDropzone"] {
+    min-height: 180px;
+    padding: 1rem;
+  }
+  [data-testid="stFileUploaderDropzone"] span {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* 🔹 Drag and Drop Text Color */
+.stFileUploader p:last-of-type,
+.stFileUploader div:last-of-type,
+.stFileUploader span,
+.stFileUploader p {
+  color: #fff !important;
+}
+
+/* 🔹 Subheader Padding - رفع ملف العملاء (Excel) */
+.stApp h3,
+.stApp .stSubheader,
+h3 {
+  padding-right: 150px !important;
+}
+
+.stTextInput > div > div > input,
+.stNumberInput input,
+.stSelectbox div[data-baseweb="select"] > div {
+  /* background: transparent !important; */
+  border: none;
+}
+
+.stTextInput > div > div > input,
+.stNumberInput input,
+.stSelectbox div[data-baseweb="select"] > div {
+  background: rgba(17, 24, 31, 0.7) !important;
+  border: none;
+}
+
+/* ==============================
+   Tab5 - Cities Multiselect Styling
+   ============================== */
+/* Parent container background */
+.stMultiSelect {
+  background-color: rgba(17, 24, 31, 0.5) !important;
+  border-radius: 12px !important;
+  padding: 8px !important;
+}
+/* Combobox area */
+.stMultiSelect > div > div > div[role="combobox"],
+.stMultiSelect [data-baseweb="select"] > div {
+  background-color: rgba(17, 24, 31, 0.7) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+}
+
+/* Dropdown menu */
+.stMultiSelect [data-baseweb="menu"] {
+  background-color: rgba(17, 24, 31, 0.95) !important;
+  color: #fff !important;
+}
+
+/* Options */
+.stMultiSelect [data-baseweb="menu"] li {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+.stMultiSelect [data-baseweb="menu"] li:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ==============================
+   Match Cities Multiselect with other inputs/selects
+   ============================== */
+/* Outer container */
+.stMultiSelect > div {
+  border-radius: 12px !important;
+}
+
+/* Combobox inner (same height/padding as inputs) */
+.stMultiSelect [data-baseweb="select"] > div,
+.stMultiSelect > div > div > div[role="combobox"] {
+  min-height: 60px !important;
+  height: 60px !important;
+  padding: 12px 16px !important;
+  border: 2px solid rgba(45, 128, 145, 0.3) !important;
+  background: rgba(17, 24, 31, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Focus/Hover states */
+.stMultiSelect [data-baseweb="select"] > div:hover,
+.stMultiSelect > div > div > div[role="combobox"]:hover {
+  border-color: rgba(45, 128, 145, 0.5) !important;
+  background: rgba(17, 24, 31, 0.75) !important;
+}
+.stMultiSelect [data-baseweb="select"] > div:focus-within,
+.stMultiSelect > div > div > div[role="combobox"]:focus-within {
+  border-color: #ff5f00 !important;
+  box-shadow: 0 0 0 3px rgba(255, 95, 0, 0.3) !important;
+}
+
+/* Input text + placeholder */
+.stMultiSelect input {
+  color: #fff !important;
+}
+.stMultiSelect input::placeholder {
+  color: #fff !important;
+  opacity: 0.9 !important;
+}
+
+/* Selected value chips */
+.stMultiSelect [data-baseweb="tag"] {
+  background: rgba(45, 128, 145, 0.25) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(70, 227, 255, 0.35) !important;
+}
+.stMultiSelect [data-baseweb="tag"] svg {
+  fill: #fff !important;
+}
+
+/* Dropdown items (active/selected) */
+.stMultiSelect [data-baseweb="menu"] li[aria-selected="true"],
+.stMultiSelect [data-baseweb="menu"] li:active {
+  background-color: rgba(255, 95, 0, 0.18) !important;
+}
+
+/* ==============================
+   احسب Button - Background and Color
+   ============================== */
+/* Streamlit form submit button (covers all forms, including tab3/tab4) */
+.stForm [data-testid="stFormSubmitButton"] button,
+button[kind="secondaryFormSubmit"],
+button[data-testid="stBaseButton-secondaryFormSubmit"] {
+  background: linear-gradient(135deg, #ff5f00 0%, #ff7f32 100%) !important;
+  color: #fff !important;
+  align-self: center !important;
+  place-self: center !important;
+  width: fit-content;
+}
+
+/* ==============================
+   Unified Dropdown Styling (Selectbox + Multiselect)
+   Make all dropdowns behave like Cities dropdown
+   ============================== */
+/* Parent containers */
+.stSelectbox,
+.stMultiSelect {
+  border-radius: 12px !important;
+}
+
+/* Combobox (visible field) */
+.stSelectbox [data-baseweb="select"] > div,
+.stSelectbox > div > div > div[role="combobox"],
+.stMultiSelect [data-baseweb="select"] > div,
+.stMultiSelect > div > div > div[role="combobox"] {
+  min-height: 60px !important;
+  height: 60px !important;
+  padding: 12px 16px !important;
+  border: 2px solid rgba(45, 128, 145, 0.3) !important;
+  background: rgba(17, 24, 31, 0.7) !important;
+  color: #fff !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+  border-radius: 12px !important;
+}
+
+/* Hover/Focus */
+.stSelectbox [data-baseweb="select"] > div:hover,
+.stSelectbox > div > div > div[role="combobox"]:hover,
+.stMultiSelect [data-baseweb="select"] > div:hover,
+.stMultiSelect > div > div > div[role="combobox"]:hover {
+  border-color: rgba(45, 128, 145, 0.5) !important;
+  background: rgba(17, 24, 31, 0.75) !important;
+}
+.stSelectbox [data-baseweb="select"] > div:focus-within,
+.stSelectbox > div > div > div[role="combobox"]:focus-within,
+.stMultiSelect [data-baseweb="select"] > div:focus-within,
+.stMultiSelect > div > div > div[role="combobox"]:focus-within {
+  border-color: #ff5f00 !important;
+  box-shadow: 0 0 0 3px rgba(255, 95, 0, 0.3) !important;
+}
+
+/* Placeholder and input text */
+.stSelectbox input,
+.stMultiSelect input {
+  color: #fff !important;
+}
+.stSelectbox input::placeholder,
+.stMultiSelect input::placeholder {
+  color: #fff !important;
+  opacity: 0.9 !important;
+}
+
+/* Dropdown menus */
+.stSelectbox [data-baseweb="menu"],
+.stMultiSelect [data-baseweb="menu"] {
+  background-color: rgba(17, 24, 31, 0.95) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+}
+
+/* Menu items */
+.stSelectbox [data-baseweb="menu"] li,
+.stMultiSelect [data-baseweb="menu"] li {
+  color: #fff !important;
+}
+.stSelectbox [data-baseweb="menu"] li:hover,
+.stMultiSelect [data-baseweb="menu"] li:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+.stSelectbox [data-baseweb="menu"] li[aria-selected="true"],
+.stMultiSelect [data-baseweb="menu"] li[aria-selected="true"] {
+  background-color: rgba(255, 95, 0, 0.18) !important;
+}
+/* ==============================
+   Button Classes - اسحب
+   ============================== */
+
+/* Primary class to use: add class="اسحب" or class="pull" to the button */
+.stButton > button.اسحب,
+.stButton > button.pull {
+  background: linear-gradient(135deg, #0f6d5f 0%, #2ca58d 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 16px 32px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.3s ease !important;
+  box-shadow: 0 8px 24px rgba(15, 109, 95, 0.35) !important;
+}
+
+.stButton > button.اسحب:hover,
+.stButton > button.pull:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 32px rgba(15, 109, 95, 0.5) !important;
+}
+
+.stButton > button.اسحب:active,
+.stButton > button.pull:active {
+  transform: translateY(0) !important;
+}
+
+/* Fallback: match by accessible attributes containing the Arabic label */
+.stButton > button[aria-label*="اسحب"],
+.stButton > button[title*="اسحب"],
+[data-testid="stButton"] > button[aria-label*="اسحب"],
+[data-testid="stButton"] > button[title*="اسحب"] {
+  background: linear-gradient(135deg, #0f6d5f 0%, #2ca58d 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 16px 32px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 24px rgba(15, 109, 95, 0.35) !important;
+}
+
+
+/* ===== 🎯 تصميم البطاقات (CPA / CR / ROAS) ===== */
+[data-testid="stMetric"] {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 🧡 عند تمرير الماوس */
+[data-testid="stMetric"]:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 100, 0, 0.4);
+    border-color: rgba(255, 140, 0, 0.4);
+}
+
+/* 🧩 اسم المقياس (CPA / CR / ROAS) */
+[data-testid="stMetricLabel"] p {
+    color: #ffae42 !important;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* 🔢 قيمة المقياس */
+[data-testid="stMetricValue"] {
+    color: #fff !important;
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+}
+
+/* ✨ مؤثر خفيف من الداخل */
+[data-testid="stMetric"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(255,120,0,0.2), rgba(255,60,0,0.15));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+[data-testid="stMetric"]:hover::before {
+    opacity: 1;
+}
+
+/* 📱 موبايل */
+@media (max-width: 768px) {
+    [data-testid="stMetric"] {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 1.3rem;
+    }
+    [data-testid="stMetricLabel"] p {
+        font-size: 1.1rem;
+    }
+}
+
+
+[data-testid="stDownloadButton"] button {
+  background: linear-gradient(145deg, #338b49, #15d24c) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #2e944b, 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+[data-testid="stDownloadButton"] button:hover {
+  background: linear-gradient(145deg, #6ff48f, #48d274);
+  box-shadow: 0 6px 0 #2e944b, 0 8px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+[data-testid="stDownloadButton"] button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #2e944b;
+  background: linear-gradient(145deg, #4fdc75, #33b45d);
+}
