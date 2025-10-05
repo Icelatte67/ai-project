@@ -59,7 +59,6 @@ load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 # Configure the Gemini client
 genai.configure(api_key=api_key)
-# genai.configure(api_key="AIzaSyCkZ8aDb7mKXbbnv-07aboMY05YVkPNqvM")  # ← ضعي مفتاح Gemini هنا
 
 # ===================== دوال مساعدة عامة =====================
 def _safe_parse_json(raw_text: str):
@@ -1582,3 +1581,4 @@ with tab5:
                 )
         except Exception as e:
             st.error(f"❌ خطأ في تنزيل التقرير: {e}")
+
