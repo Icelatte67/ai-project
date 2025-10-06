@@ -51,7 +51,7 @@ def add_bg_from_local(image_file):
     """, unsafe_allow_html=True)
 
 # ================= نادِ الخلفية =================
-add_bg_from_local("assets/rana.png")
+add_bg_from_local("rana.png")
 # ===================== إعداد مفتاح Google Generative AI =====================
 # Load environment variables from .env file
 load_dotenv()
@@ -1581,4 +1581,5 @@ with tab5:
                 )
         except Exception as e:
             st.error(f"❌ خطأ في تنزيل التقرير: {e}")
+
 
